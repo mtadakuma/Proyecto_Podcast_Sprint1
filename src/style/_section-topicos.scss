@@ -1,0 +1,109 @@
+@import './variables';
+@import './mixins';
+
+
+.section-topicos{
+    padding-top: 6vw;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.section-topicos h2{
+    font-family: $font-family-sans;
+    font-size: $font-size-title-s;
+    letter-spacing: 0;
+    line-height: $line-height-title-s;
+    font-weight: $font-weight-light;
+}
+
+.topico-container{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.topico{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    margin-bottom: 2.25rem;
+    width: 100%;
+}
+
+.topico img{
+    max-width: $img-max-width;
+}
+
+.topico h3{
+    font-size:$font-size-subtitle-s;
+    font-family: $font-family-sans;
+    font-weight: $font-weight-bold;
+    max-width: 80%;
+}
+
+@media screen and (min-width: 481px){
+    .section-topicos{
+        max-width: 35rem;
+        margin-left:auto;
+        margin-right:auto;
+    }
+}
+@media screen and (min-width: 769px){
+    .topico{
+        height: 14rem;
+        width: 50%;
+    }
+
+    .topico-container{
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .section-topicos{
+        max-width:100%;
+        padding-left: 10.5vw;
+        padding-right: 10.5vw;
+    }
+
+    .section-topicos h2{
+        font-size: $font-size-title-s;
+
+    }
+
+}
+
+@media screen and (min-width: 1024px){
+    
+    .section-topicos h2{
+        font-size: $font-size-title-m2;
+        font-weight: $font-weight-light;
+        margin-top:0;
+        margin-bottom:4rem;
+    }
+
+    .topico{
+        /* height: 16rem; */
+        width:25%;
+    }
+
+    .topico-container{
+        flex-wrap: nowrap;
+    }
+
+    .topico h3{
+        max-width: 80%;
+    }
+}
+
+@media screen and (min-width: 1440px){
+    .section-topicos{
+        padding-top: $max-padding-v4;
+        padding-left: $max-padding;
+        padding-right: $max-padding;
+    }
+}

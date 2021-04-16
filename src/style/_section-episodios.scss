@@ -1,0 +1,109 @@
+@import './variables';
+@import './mixins';
+
+
+
+.section-episodios{
+    background-image: $bg-color-v4;
+    /*Igual que en section-inicio*/
+    padding-top: 4.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    /*igual que en section-inicio*/
+    padding-bottom: 8rem;
+    clip-path:polygon(0 10vw, 100% 0, 100% calc(100% - 10vw), 0 100%);
+}
+
+.section-episodios h2{
+    font-family: $font-family-sans;
+    color: $color-v1;
+    font-weight: $font-weight-light;
+    font-size: $font-size-title-s; 
+    margin-top:0;
+}
+
+iframe{
+    margin-bottom: .5em;
+    width: 100%;
+    border: none;
+}
+
+
+@media screen and (min-width:  481px){
+
+    .section-episodios{
+        padding-top: 8rem;
+    }
+
+    .episodes-container{
+        max-width: 35rem;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+}
+
+@media screen and (min-width: 769px){
+    
+    .section-episodios{
+        padding-top: 10rem;
+        padding-bottom: 14rem;
+    }
+
+    .section-episodios h2{
+        font-size: $font-size-title-s;
+        margin-left: 10.5vw;
+        margin-right: 10.5vw;
+    }
+
+
+    .iframes-container{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 4.5vw;
+        row-gap: 4.5vw;
+        padding-left: min(30px,100px);
+        padding-right: min(30px,100px);
+    }
+
+    iframe{
+        max-width:598px;
+        justify-self:center;
+    }
+
+    .iframe1, .iframe3{
+        justify-self:end;
+    }
+
+    .iframe2, .iframe4{
+        justify-self:start;
+    }
+
+    .episodes-container{
+        max-width: 100%;
+    }
+}
+
+@media screen and (min-width: 1024px){
+
+    .section-episodios{
+        padding-bottom: $max-padding-v2;
+    }
+
+    .section-episodios h2{
+        font-size: $font-size-title-m2;
+    }
+}
+
+@media screen and (min-width: 1440px){
+    .section-episodios{
+        padding-top: $max-padding;
+        clip-path:polygon(0 138px, 100% 0, 100% calc(100% - 138px), 0 100%);
+    }
+
+    .section-episodios h2{
+        margin-left: $max-padding;
+        margin-right: $max-padding;
+    }
+    
+}

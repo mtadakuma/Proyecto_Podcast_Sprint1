@@ -1,0 +1,23 @@
+@import './variables';
+@import './mixins';
+@import './header';
+@import './section-inicio';
+@import './section-episodios';
+@import './section-nosotros';
+@import './section-entrevistas';
+@import './section-topicos';
+@import './section-novedades';
+@import './footer';
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    @include format-document;
+    
+}
+
+a{
+    text-decoration:none;
+}

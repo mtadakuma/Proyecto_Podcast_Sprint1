@@ -1,0 +1,121 @@
+@import './variables';
+@import './mixins';
+
+
+
+.section-nosotros{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.section-nosotros h2{
+    font-family: $font-family-sans;
+    font-size: $font-size-title-s;
+    letter-spacing: 0;
+    line-height: $line-height-title-s;
+    font-weight: $font-weight-light;
+    max-width: 70%;
+}
+
+.section-nosotros p{
+    font-family: $font-family-mono;
+    font-size: $font-size-p-s;
+    letter-spacing: 0;
+    line-height: $line-height-p-s;
+    margin-top:16px;
+}
+
+.img-photo{
+    max-width: 90%;
+    align-self:center;
+    transform: translateY(-6.25rem); 
+}
+
+.text-container{
+    margin-top: -8rem;
+}
+
+@media screen and (min-width: 481px){
+    
+    .section-nosotros{
+        max-width: 35rem;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .text-container{
+        margin-top: -6.25rem;
+    }
+
+    .section-nosotros h2{
+        max-width: 100%;
+    }
+    
+}
+
+@media screen and (min-width: 769px){
+     .section-nosotros{
+        max-width: 100%;
+        margin-left: 10.5vw;
+        margin-right: 10.5vw;
+    }   
+
+
+    .text-container{
+        margin-top: -9rem;
+    }
+
+    .section-nosotros p{
+        font-size: 0.8rem;
+    }
+
+    .img-photo{
+        width: 50vw;
+        transform: translateY(-9rem); 
+    }
+    
+}
+
+@media screen and (min-width: 1024px){
+    .section-nosotros{
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        justify-content:space-evenly;
+        margin-bottom: $max-margin-v2;
+    }
+ 
+    .text-container{
+        margin-top: -15rem;
+    }
+
+    .img-photo{
+        max-width: 457.6px;
+    }
+
+    .section-nosotros h2{
+        font-size: $font-size-title-m2;
+        font-weight: $font-weight-light;
+        margin-top:0;
+    }
+
+    .section-nosotros p{
+        font-size: $font-size-p-l;
+        max-width: 29rem;
+        font-weight:$font-weight-medium;
+    }
+}
+
+@media screen and (min-width: 1440px){
+    .section-nosotros{
+        max-width: 100%;
+        margin:0;
+        margin-left: $max-margin;
+        margin-right: $max-margin;
+        margin-bottom: $max-margin-v2;
+    }
+}

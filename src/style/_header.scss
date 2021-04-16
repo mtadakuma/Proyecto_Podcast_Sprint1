@@ -1,0 +1,225 @@
+@import './variables';
+@import './mixins';
+
+body{
+    background-color: $bg-color-v2;
+}
+
+header{
+    background-color: $bg-color-v2;
+    text-align:left;
+    position:fixed;
+    z-index: $z-index-top;
+    width: 100%;
+    top:0;
+    left:0;
+}
+
+.logo{
+    margin-top: .625rem;
+    margin-bottom: .625rem;
+    margin-left: 1rem;
+}
+
+nav{
+    position:absolute;
+    top: 100%;
+    left:0;
+    width: 100%;
+    background-color: $bg-color-v3;
+    transform: scale(1,0);
+    transform-origin: top;
+    transition: transform $time-ms-slow ease-in-out;
+}
+
+nav ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+nav li{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+nav a{
+    font-family: $font-family-mono;
+    color:  $color-v1;
+    letter-spacing: 0;
+    line-height: $line-height-s;
+    opacity:0;
+    font-weight:$font-weight-light;
+    transition: opacity $time-ms-fast ease-in-out;
+}
+
+nav a:hover{
+    color: $color-v2;
+    text-decoration: line-through;
+}
+
+nav a:active{
+    color:  $color-v1;
+    text-decoration: line-through;
+}
+
+.nav-toggle:checked ~ nav{
+    display:block;
+    transform: scale(1,1);
+}
+
+.nav-toggle:checked ~ nav a{
+    opacity: 1;
+    transition: opacity $time-ms-faster ease-in-out $time-ms-faster;
+}
+
+.nav-toggle{
+    display:none;
+}
+
+.nav-toggle-label{
+    position:absolute;
+    top:0;
+    right: 0;
+    margin-right: 1rem;
+    height: 100%;
+    display:flex;
+    align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after{
+    display:block;
+    background: black;
+    height: .125rem;
+    width: 1.125rem;
+    border-radius: 2px;
+    position:relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after{
+    content: '';
+    position:absolute;
+}
+
+.nav-toggle-label span::before{
+    bottom: .3125rem;
+    transition: transform $time-ms-faster ease-in-out;
+}
+
+.nav-toggle-label span::after{
+    top: .3125rem;
+    transition: transform $time-ms-faster ease-in-out;
+}
+
+
+.nav-toggle:checked ~ .nav-toggle-label span{
+    background-color:$color-v1;
+}
+
+.nav-toggle:checked ~ .nav-toggle-label span::before{
+    transform: rotate(45deg) translate(.2125rem, .2125rem);
+    transition: transform $time-ms-faster ease-in-out;
+}
+
+.nav-toggle:checked ~ .nav-toggle-label span::after{
+    transform: rotate(-45deg) translate(.2125rem, -.2125rem);
+    transition: transform $time-ms-faster ease-in-out;
+}
+
+/*Tablets*/
+@media screen and (min-width: 481px){
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after{
+        height: .15rem;
+        width: 1.5rem;
+    }
+
+    .nav-toggle-label span::before{
+        bottom: .4rem;
+    }
+
+    .nav-toggle-label span::after{
+        top: .4rem;
+    }
+
+    .nav-toggle:checked ~ .nav-toggle-label span::before{
+        transform: rotate(45deg) translate(.275rem, .275rem);
+        transition: transform $time-ms-faster ease-in-out;
+    }
+    
+    .nav-toggle:checked ~ .nav-toggle-label span::after{
+        transform: rotate(-45deg) translate(.275rem, -.275rem);
+        transition: transform $time-ms-faster ease-in-out;
+    }
+
+    .logo{
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+/*Desktops*/
+@media screen and (min-width: 769px){
+    .nav-toggle-label{
+        display:none;
+    }
+
+    header{
+        //max-width: 1440px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 5rem;
+        display:grid;
+        grid-template-columns: $grid-column-width auto minmax($grid-column-min-width, 1fr) $grid-column-width;
+    }
+
+    .logo{
+        display:flex;
+        align-self: center;
+        margin:0;
+        grid-column: 2/3;
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+
+    nav{
+        all:unset;
+        grid-column: 3/4;
+        display: flex;
+        justify-content:flex-end;
+        align-self:center;
+    }
+
+    nav a{
+        font-size:$font-size-button-l;
+        font-family: $font-family-mono;
+        color: $color-v3;
+        opacity:1;
+    }
+
+    nav a:hover{
+        font-weight: $font-weight-medium;
+        color: $color-v2;
+        text-decoration: line-through;
+    }
+
+    nav a:active{
+        color: $color-v3;
+        text-decoration: line-through;
+    }
+
+    nav ul{
+        display:flex;
+        justify-content:flex-end;
+    }
+
+    nav li{
+       margin-left: 3em;
+    }
+}

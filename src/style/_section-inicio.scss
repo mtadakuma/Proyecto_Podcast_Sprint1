@@ -1,0 +1,154 @@
+@import './variables';
+@import './mixins';
+
+.section-inicio{
+    padding-top: 4.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: $bg-color-v2;
+    /* width: 100%; Eliminado por interferir con el padding*/ 
+}
+
+h1{
+    font-family: $font-family-sans;
+    font-weight: $font-weight-light;
+    font-size: $font-size-title-s; 
+    color: $color-v3;
+    line-height: $line-height-title-s;
+    margin-top:0;
+    margin-bottom:0;
+}
+
+.h1-world{
+    text-decoration:line-through;
+}
+
+.h1-world::after{
+    content:'\a';
+    white-space:pre;
+}
+
+.section-inicio p{
+    font-family: $font-family-mono;
+    font-size: $font-size-p-s;
+    color: $color-v3;
+    line-height: $line-height-p-s;
+    margin-top:1rem;
+}
+
+.button{
+    font-family: $font-family-mono;
+    font-weight: $font-weight-medium;
+    font-size: 1rem;
+    text-transform: uppercase;
+    height: 3rem;
+    background-color:$color-v2;
+    border: 0;
+    width: 100%;
+    margin-top: 2.25rem;
+    margin-bottom: 1.5rem;
+    display:block;
+    color:$color-v3;
+    text-align:center;
+    line-height:3rem;
+}
+
+.button:hover{
+    background-image: linear-gradient(225deg,$color-v4 0%,$color-v2 100%);
+    color:$color-v1;
+}
+
+.button:active{
+    color:$color-v4;
+}
+
+.desk-screen{
+    display:none;
+}
+
+
+@media screen and (min-width: 481px){
+
+
+    h1{
+        font-size:$font-size-title-m;
+    }
+
+    .h1-world::after{
+        content:'';
+        white-space:normal;
+    }
+
+    .h1-dot a{
+        color:$color-v4;
+    }
+
+    .mob-screen{
+        display:none;
+    }
+
+    .desk-screen{
+        display:block;
+        max-width: 33.75rem;
+    }
+    
+    .section-inicio {
+        padding-top:8rem;
+        max-width: 35rem;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    
+}
+
+
+@media screen and (min-width: 769px){
+    .section-inicio{
+        margin:0;
+        max-width:100%;
+        padding-top: 14vw;
+        padding-left: 14vw;
+        padding-right: 14vw;
+    }
+
+    h1{
+        font-size: $font-size-title-m2;
+        font-weight:$font-weight-medium;
+    }
+    .section-inicio p{
+        font-size: $font-size-p-l;
+        max-width: 39.25rem;
+        font-weight:$font-weight-medium;
+    }
+
+    .section-inicio .button{
+        margin-top: 3.5rem;
+        margin-left:0;
+        width: 14.125rem;
+        font-size: $font-size-button-l;
+    }
+
+}
+
+@media screen and (min-width: 1025px){
+    h1{
+        font-size: $font-size-title-l;
+    }
+
+    .section-inicio p{
+        margin-left:0;
+    }
+
+    .button{
+        margin-bottom: .3rem;
+    }
+    
+}
+
+@media screen and (min-width: 1440px){
+    .section-inicio{
+        padding-top: $max-padding-v2;
+        padding-left: $max-padding-v2;
+        padding-right: $max-padding-v2;
+    }
+}

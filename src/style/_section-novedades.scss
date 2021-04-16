@@ -1,0 +1,75 @@
+@import './variables';
+@import './mixins';
+
+
+
+.section-novedades{
+    background-image: $bg-color-v4;
+    padding-top: $max-padding-v4;
+    padding-bottom: $max-padding-v4;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    clip-path:polygon(0 10vw, 100% 0, 100% 100%, 0 100%)
+}
+
+.section-novedades h2{
+    font-family: $font-family-sans;
+    color: $color-v1;
+    font-weight: $font-weight-light;
+    font-size: $font-size-title-s; 
+    margin:0 auto;
+    text-align:center;
+    max-width: 75%;
+}
+
+@media screen and (min-width: 481px){
+    .section-novedades{
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    .section-novedades h2{
+        font-size: $font-size-title-m2; 
+    }
+}
+
+@media screen and (min-width: 769px){
+    .section-novedades{
+        padding-top: 10rem;
+        padding-bottom: 8rem;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .section-novedades .button-b{
+        width: 21.5rem;
+        font-size: $font-size-button-l;
+    }
+
+    
+
+    .section-novedades h2{
+        max-width:100%;
+    }
+
+}
+
+@media screen and (min-width: 1025px){
+    .section-novedades{
+        padding-top: $max-padding-v2;
+        padding-bottom: $max-padding;
+    }
+
+    .section-novedades .button-b{
+        font-size: 1.125rem;
+    }
+}
+
+@media screen and (min-width: 1440px){
+    .section-novedades{
+        padding-left: $max-padding;
+        padding-right: $max-padding;
+        clip-path:polygon(0 138px, 100% 0, 100% 100%, 0 100%)
+    }
+}

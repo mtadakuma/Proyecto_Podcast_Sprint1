@@ -1,0 +1,83 @@
+@import './variables';
+@import './mixins';
+
+
+.section-entrevistas{
+    padding-top: 6vw;
+}
+
+.section-entrevistas h2{
+    font-family: $font-family-sans;
+    font-size: $font-size-title-s;
+    letter-spacing: 0;
+    line-height: $line-height-title-s;
+    font-weight: $font-weight-light;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 70%;
+}
+
+.photo-container{
+    display:flex;
+    flex-direction:column;
+}
+
+.photo{
+    width:100%;
+}
+
+
+@media screen and (min-width: 481px){
+    .photo-container{
+        flex-direction:row;
+        flex-wrap:wrap;
+    }
+
+    .photo{
+        width: 50%;
+
+    }
+
+    .title-center{
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .section-entrevistas h2{
+        max-width: 35rem;
+        margin-left:auto;
+        margin-right:auto;
+    }
+}
+
+@media screen and (min-width: 768px){
+
+    .section-entrevistas h2{
+        font-size: $font-size-title-s;
+        font-weight: $font-weight-light;
+        margin-top:0;
+        margin-left: 10.5vw;
+        margin-right: 10.5vw;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .photo{
+        width: 33.33%;
+    }
+
+    .section-entrevistas h2{
+        font-size: $font-size-title-m2;
+    }
+}
+
+@media screen and (min-width: 1440px){
+    .section-entrevistas{
+        width:100%;
+        padding-top: $max-padding-v3;
+    }
+    
+    .section-entrevistas h2{
+        margin-left: $max-padding;
+        margin-right: $max-padding;
+    }
+}
