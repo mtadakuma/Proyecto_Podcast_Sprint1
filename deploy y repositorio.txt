@@ -1,5 +1,0 @@
-Deploy de Proyecto:
-https://mtadakuma.github.io/Proyecto_Podcast_Sprint1/
-
-Repositorio:
-https://github.com/mtadakuma/Proyecto_Podcast_Sprint1
